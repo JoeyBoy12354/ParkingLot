@@ -1,0 +1,35 @@
+The task is to design and implement the control logic for an automatic car park.
+The car park has two separate access gates, for cars to get in and out.
+Each gate has the following set of inputs and outputs:
+Inputs: 
+•	Inductive sensor: Detects if a car is in front of the gate. 
+•	Card Reader: Reads driver ID from driver card.
+•	Safety Sensor: Detects any object that blocks the gate from closing. 
+•	Gate fully open. 
+•	Gate fully closed. 
+•	License Plate Reader. 
+•	Emergency Stop. 
+Outputs: 
+•	Open Gate. 
+•	Close Gate. 
+•	Traffic Light: Red, Yellow and Green lights   
+
+Requirements: 
+1.	A gate should only open for authorized drivers. 
+2.	A gate should never open when a car is not present. 
+3.	A parking lot has 150 total parking spaces. 
+4.	A gate should never close when it is not safe to do so. 
+5.	A gate should not open if the read license plate matches one that is currently in the park. 
+6.	When an emergency stop button is pressed any movement on that gate should stop until the button is released. 
+
+To complete the task modify the Library project. It has a stub implementation of the IParkingLot interface but nothing else.
+You can split the logic into however many classes you deem necessary and use whatever structure for the program you feel is best.
+The premise is that the ParkingLot class is used to create the entry and exit gates with InitEntryGate and InitExitGate and the RunCycle methods of the gate instances are then used to run the gate control logic by calling them periodically.
+When the RunCycle method of those gates is called with inputs (IParkingLotGateInputs) the method should populate the outputs (IParkingLotGateOutputs) following the requirements described above.
+
+The attached solution contains a simple test program within the ParkingLot project which you are free to modify and improve in whatever way you want.
+The test program is outside the scope of this task and will not be reviewed, we only focus on the ParkingLot.Library project.
+The implementation should be just a basic library, no need for a standalone program.
+There should be no need to modify the ParkingLot.Interfaces project.
+There’s also no need to have any persistent data storage nor any unit testing or user interface.
+The focus here is on the design and structure of the core logic.
